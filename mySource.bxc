@@ -1,0 +1,53 @@
+/***************************
+   BXC语言的第一个程序
+		作者：BXC
+***************************/
+
+/* 测试结构体声明 */
+typedef String struct
+{
+   int length;
+   char[3] bxc;
+};
+
+/* 测试子程序 */
+int print(int x,int y)
+{
+   if(x<>y)
+      cout<<(x+y)*2;
+   return x+y;
+}
+
+/* 最后一个必须是主函数 */
+int main()
+{
+   typedef Integer int;
+   Integer i,j;
+
+   String wsl;
+
+   wsl.bxc[0]='B';
+   wsl.bxc[1]='X';
+   wsl.bxc[2]='C';
+
+   for(i=0;i<=10;i=i+1;)
+   {
+      if(i==0)
+      {
+         j=0;
+         while(j<wsl.length)
+         {
+             cout<<wsl.bxc[j];   /* Hello World */
+             j=j+1;
+         }
+      }
+      else if(i<10)
+      {
+         j=2*(i+j)+i/(6+j);
+         print(i,j);
+      }
+      else 
+         cin>>i;
+   }
+   return 0;
+}

@@ -1,0 +1,181 @@
+------------------------- 源程序 --------------------------
+
+   1: /***************************
+   2:    BXC语言的第一个程序
+   3: 		作者：BXC
+   4: ***************************/
+   5: 
+   6: /* 测试结构体声明 */
+   7: typedef String struct
+   8: {
+   9:    int length;
+  10:    char[3] bxc;
+  11: };
+  12: 
+  13: /* 测试子程序 */
+  14: int print(int x,int y)
+  15: {
+  16:    if(x<>y)
+  17:       cout<<(x+y)*2;
+  18:    return x+y;
+  19: }
+  20: 
+  21: /* 最后一个必须是主函数 */
+  22: int main()
+  23: {
+  24:    typedef Integer int;
+  25:    Integer i,j;
+  26: 
+  27:    String wsl;
+  28: 
+  29:    wsl.bxc[0]='B';
+  30:    wsl.bxc[1]='X';
+  31:    wsl.bxc[2]='C';
+  32: 
+  33:    for(i=0;i<=10;i=i+1;)
+  34:    {
+  35:       if(i==0)
+  36:       {
+  37:          j=0;
+  38:          while(j<wsl.length)
+  39:          {
+  40:              cout<<wsl.bxc[j];   /* Hello World */
+  41:              j=j+1;
+  42:          }
+  43:       }
+  44:       else if(i<10)
+  45:       {
+  46:          j=2*(i+j)+i/(6+j);
+  47:          print(i,j);
+  48:       }
+  49:       else 
+  50:          cin>>i;
+  51:    }
+  52:    return 0;
+  53: }
+
+----------------------- LL(1)语法树 -----------------------
+
+line:54      RootK  
+line:7           TypeK  StructK  String  
+line:9               DecK  IntK  length  
+line:10              DecK  ArrayK  3  CharK  bxc  
+line:14          FuncDecK  IntK  print  
+line:14              DecK  IntK  x  
+line:14              DecK  IntK  y  
+line:14              StmLk  
+line:16                  StmtK  If  
+line:16                      ExpK  Op  <>  
+line:16                          ExpK  Vari  Id  x  
+line:16                          ExpK  Vari  Id  y  
+line:17                      StmtK  Cout  
+line:17                          ExpK  Op  *  
+line:17                              ExpK  Op  +  
+line:17                                  ExpK  Vari  Id  x  
+line:17                                  ExpK  Vari  Id  y  
+line:17                              ExpK  Const  Id  IntC  2  
+line:18                  StmtK  Return  
+line:18                      ExpK  Op  +  
+line:18                          ExpK  Vari  Id  x  
+line:18                          ExpK  Vari  Id  y  
+line:22          FuncDecK  IntK  main  
+line:22              StmLk  
+line:24                  TypeK  IntK  Integer  
+line:25                  DecK  IdK  Integer  i  j  
+line:27                  DecK  IdK  String  wsl  
+line:29                  StmtK  Assign  
+line:29                      ExpK  Vari  FieldMember  wsl  
+line:29                          ExpK  Vari  Id  bxc  
+line:29                              ExpK  Const  ArrayMember  0  
+line:29                      ExpK  Const  Id  CharC  B  
+line:30                  StmtK  Assign  
+line:30                      ExpK  Vari  FieldMember  wsl  
+line:30                          ExpK  Vari  Id  bxc  
+line:30                              ExpK  Const  ArrayMember  1  
+line:30                      ExpK  Const  Id  CharC  X  
+line:31                  StmtK  Assign  
+line:31                      ExpK  Vari  FieldMember  wsl  
+line:31                          ExpK  Vari  Id  bxc  
+line:31                              ExpK  Const  ArrayMember  2  
+line:31                      ExpK  Const  Id  CharC  C  
+line:33                  StmtK  For  
+line:33                      StmtK  Assign  
+line:33                          ExpK  Vari  Id  i  
+line:33                          ExpK  Const  Id  IntC  0  
+line:33                      ExpK  Op  <=  
+line:33                          ExpK  Vari  Id  i  
+line:33                          ExpK  Const  Id  IntC  10  
+line:33                      StmtK  Assign  
+line:33                          ExpK  Vari  Id  i  
+line:33                          ExpK  Op  +  
+line:33                              ExpK  Vari  Id  i  
+line:33                              ExpK  Const  Id  IntC  1  
+line:33                      StmLk  
+line:35                          StmtK  If  
+line:35                              ExpK  Op  ==  
+line:35                                  ExpK  Vari  Id  i  
+line:35                                  ExpK  Const  Id  IntC  0  
+line:35                              StmLk  
+line:37                                  StmtK  Assign  
+line:37                                      ExpK  Vari  Id  j  
+line:37                                      ExpK  Const  Id  IntC  0  
+line:38                                  StmtK  While  
+line:38                                      ExpK  Op  <  
+line:38                                          ExpK  Vari  Id  j  
+line:38                                          ExpK  Vari  FieldMember  wsl  
+line:38                                              ExpK  Vari  Id  length  
+line:38                                      StmLk  
+line:40                                          StmtK  Cout  
+line:40                                              ExpK  Vari  FieldMember  wsl  
+line:40                                                  ExpK  Vari  Id  bxc  
+line:40                                                      ExpK  Vari  ArrayMember  j
+line:41                                          StmtK  Assign  
+line:41                                              ExpK  Vari  Id  j  
+line:41                                              ExpK  Op  +  
+line:41                                                  ExpK  Vari  Id  j  
+line:41                                                  ExpK  Const  Id  IntC  1  
+line:44                              StmtK  If  
+line:44                                  ExpK  Op  <  
+line:44                                      ExpK  Vari  Id  i  
+line:44                                      ExpK  Const  Id  IntC  10  
+line:44                                  StmLk  
+line:46                                      StmtK  Assign  
+line:46                                          ExpK  Vari  Id  j  
+line:46                                          ExpK  Op  +  
+line:46                                              ExpK  Op  *  
+line:46                                                  ExpK  Const  Id  IntC  2  
+line:46                                                  ExpK  Op  +  
+line:46                                                      ExpK  Vari  Id  i  
+line:46                                                      ExpK  Vari  Id  j  
+line:46                                              ExpK  Op  /  
+line:46                                                  ExpK  Vari  Id  i  
+line:46                                                  ExpK  Op  +  
+line:46                                                      ExpK  Const  Id  IntC  6  
+line:46                                                      ExpK  Vari  Id  j  
+line:47                                      StmtK  Call    
+line:47                                          ExpK  Vari  Id  print  
+line:47                                          ExpK  Vari  Id  i  
+line:47                                          ExpK  Vari  Id  j  
+line:50                                  StmtK  Cin  i  
+line:52                  StmtK  Return  
+line:52                      ExpK  Const  Id  IntC  0  
+
+---------------------- 第0层的符号表 ----------------------
+
+    String:   structTy  typekind  
+     print:   intTy     funckind  Level = 1  nOff = 12  
+      main:   intTy     funckind  Level = 1  nOff = 0  
+
+---------------------- 第1层的符号表 ----------------------
+
+         x:   intTy     varkind   Level = 1  Offset = 10  
+         y:   intTy     varkind   Level = 1  Offset = 11  
+   Integer:   intTy     typekind  
+         i:   intTy     varkind   Level = 1  Offset = 10  
+         j:   intTy     varkind   Level = 1  Offset = 11  
+       wsl:   structTy  varkind   Level = 1  Offset = 12  
+
+----------------------- 域表:String -----------------------
+
+    length:   intTy     Off = 0
+       bxc:   arrayTy   Off = 1
