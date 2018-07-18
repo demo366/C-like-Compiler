@@ -73,7 +73,7 @@ VarName ;</span></font></font></p>
 
 <p style="margin: 8px 0px 13.33px 48px; text-indent: 0cm;"><font size="2"><font color="#595959"><span style="margin: 0px; font-family: " 微软雅黑",sans-serif;"="">注：</span><span lang="EN-US" style="margin: 0px;"><font face="Constantia"># </font></span><span style="margin: 0px; font-family: " 微软雅黑",sans-serif;"="">在程序中由枚举类型<span lang="EN-US" style="margin: 0px;">LexType</span>中的<span lang="EN-US" style="margin: 0px;">ENDFILE</span>实现。<span lang="EN-US" style="margin: 0px;"></span></span></font></font></p>
 
-<p style="margin: 8px 0px 13.33px 48px; text-indent: -18pt;"><span lang="EN-US" style="margin: 0px; color: rgb(0, 160, 184); line-height: 110%; font-family: " 15pt;"="" ui",sans-serif;="" yahei="" microsoft=""><span style="margin: 0px;">5.<span style="font: 7pt " normal;"="" none;="" 0px;="" roman";="" new="" times="">&nbsp;&nbsp; </span></span></span><span style="margin: 0px; color: rgb(0, 160, 184); line-height: 110%; font-family: " 15pt;"="" ui",sans-serif;="" yahei="" microsoft="">语法树节点的数据结构<span lang="EN-US" style="margin: 0px;"></span></span></p>
+### 语法树节点的数据结构
 
 <p style="margin: 8px 0px 13.33px 48px;"><font size="2"><font color="#595959"><span style="margin: 0px; font-family: 华文新魏;">为方便理解，语法树节点的数据结构借鉴了</span><span lang="EN-US" style="margin: 0px;"><font face="Constantia">SNL</font></span><span style="margin: 0px; font-family: 华文新魏;">（</span><span lang="EN-US" style="margin: 0px;"><font face="Constantia">Small Nested Language</font></span><span style="margin: 0px; font-family: 华文新魏;">）语言编译器。</span></font></font><span lang="EN-US" style="margin: 0px;"></span></p>
 
@@ -165,11 +165,9 @@ VarName ;</span></font></font></p>
 
 <p style="margin: 8px 0px 13.33px 48px; text-indent: 0cm;"><font size="2"><font color="#595959"><span style="margin: 0px; font-family: 华文新魏;">注：</span><span lang="EN-US" style="margin: 0px;"><font face="Constantia">Java</font></span><span style="margin: 0px; font-family: 华文新魏;">中没有共用体，故成员</span><span lang="EN-US" style="margin: 0px;"><font face="Constantia">kind</font></span><span style="margin: 0px; font-family: 华文新魏;">以及</span><span lang="EN-US" style="margin: 0px;"><font face="Constantia">attr</font></span><span style="margin: 0px; font-family: 华文新魏;">使用类结构。</span><span lang="EN-US" style="margin: 0px;"><font face="Constantia">attr</font></span><span style="margin: 0px; font-family: 华文新魏;">的内部成员采用了内部类结构。</span></font></font><span lang="EN-US" style="margin: 0px;"></span></p>
 
-<p style="margin: 8px 0px 13.33px 24px; text-indent: -18pt;"><font color="#595959"><span style="margin: 0px;"><span lang="EN-US" style="margin: 0px; line-height: 110%; font-family: " 15pt;"="" ui",sans-serif;="" yahei="" microsoft=""><span style="margin: 0px;">●<span style="font: 7pt " normal;"="" none;="" 0px;="" roman";="" new="" times="">&nbsp;&nbsp;&nbsp;
-</span></span></span></span><span style="margin: 0px;"><span lang="EN-US" style="margin: 0px; line-height: 110%; font-family: " 15pt;"="" ui",sans-serif;="" yahei="" microsoft="">BXC</span></span><span style="margin: 0px;"><span style="margin: 0px; line-height: 110%; font-family: " 15pt;"="" ui",sans-serif;="" yahei="" microsoft="">语言的语义<span lang="EN-US" style="margin: 0px;"></span></span></span></font></p>
+## BXC语言的语义
 
-<p style="margin: 8px 0px 13.33px 48px; text-indent: -18pt;"><font color="#595959"><span style="margin: 0px;"><span lang="EN-US" style="margin: 0px; line-height: 110%; font-family: " 15pt;"="" ui",sans-serif;="" yahei="" microsoft=""><span style="margin: 0px;">1.<span style="font: 7pt " normal;"="" none;="" 0px;="" roman";="" new="" times="">&nbsp;&nbsp;
-</span></span></span></span><span style="margin: 0px;"><span style="margin: 0px; line-height: 110%; font-family: " 15pt;"="" ui",sans-serif;="" yahei="" microsoft="">符号表的组织<span lang="EN-US" style="margin: 0px;"></span></span></span></font></p>
+### 符号表的组织
 
 <p style="margin: 8px 0px 13.33px 72px; text-indent: -18pt;"><font color="#595959"><span lang="EN-US" style="margin: 0px;"><span style="margin: 0px;"><font face="Constantia" size="2">1）</font><span style="font: 7pt " normal;"="" none;="" 0px;="" roman";="" new="" times="">&nbsp;&nbsp;
 </span></span></span><span style="margin: 0px; font-family: 华文新魏;"><font size="2">分层建立符号表，使各分程序的符号表项连续地排列在一起，不会被内层分程序的符号表所割裂。</font></span></font><span lang="EN-US" style="margin: 0px;"></span></p>
@@ -181,8 +179,7 @@ VarName ;</span></font></font></p>
 
 <p style="margin: 8px 0px 13.33px 72px; text-indent: -18pt;"><font color="#595959"><span lang="EN-US" style="margin: 0px;"><span style="margin: 0px;"><font face="Constantia" size="2">4）</font><span style="font: 7pt " normal;"="" none;="" 0px;="" roman";="" new="" times="">&nbsp; </span></span></span><span style="margin: 0px; font-family: 华文新魏;"><font size="2">分层打印符号表。对每一个结构体类型的声明，都需要打印域表。</font></span></font><span lang="EN-US" style="margin: 0px;"></span></p>
 
-<p style="margin: 8px 0px 13.33px 48px; text-indent: -18pt;"><font color="#595959"><span style="margin: 0px;"><span lang="EN-US" style="margin: 0px; line-height: 110%; font-family: " 15pt;"="" ui",sans-serif;="" yahei="" microsoft=""><span style="margin: 0px;">2.<span style="font: 7pt " normal;"="" none;="" 0px;="" roman";="" new="" times="">&nbsp;&nbsp;
-</span></span></span></span><span style="margin: 0px;"><span style="margin: 0px; line-height: 110%; font-family: " 15pt;"="" ui",sans-serif;="" yahei="" microsoft="">符号表的实现<span lang="EN-US" style="margin: 0px;"></span></span></span></font></p>
+### 符号表的实现
 
 <p style="margin: 8px 0px 13.33px; text-indent: 36pt;"><font size="2"><font color="#595959"><span style="margin: 0px; font-family: 华文新魏;">分程序表用</span><span lang="EN-US" style="margin: 0px;"><font face="Constantia">scope</font></span><span style="margin: 0px; font-family: 华文新魏;">栈实现。</span><span lang="EN-US" style="margin: 0px;"><font face="Constantia">scope</font></span><span style="margin: 0px; font-family: 华文新魏;">栈的声明如下：</span></font></font><span lang="EN-US" style="margin: 0px;"></span></p>
 
@@ -196,8 +193,7 @@ ArrayList&lt;ArrayList&lt;SymbTable&gt;&gt;();</span></p>
 
 <p style="margin: 8px 0px 13.33px;"><font size="2"><font color="#595959"><span lang="EN-US" style="margin: 0px;"><span style="margin: 0px;"><font face="Constantia">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></span><span style="margin: 0px; font-family: 华文新魏;">符号表采用顺序表的数据结构存储，节点是</span><span lang="EN-US" style="margin: 0px;"><font face="Constantia">SymbTable</font></span><span style="margin: 0px; font-family: 华文新魏;">类的对象。</span></font></font><span lang="EN-US" style="margin: 0px;"></span></p>
 
-<p style="margin: 8px 0px 13.33px 24px; text-indent: -18pt;"><font color="#595959"><span style="margin: 0px;"><span lang="EN-US" style="margin: 0px; line-height: 110%; font-family: " 15pt;"="" ui",sans-serif;="" yahei="" microsoft=""><span style="margin: 0px;">●<span style="font: 7pt " normal;"="" none;="" 0px;="" roman";="" new="" times="">&nbsp;&nbsp;&nbsp;
-</span></span></span></span><span style="margin: 0px;"><span style="margin: 0px; line-height: 110%; font-family: " 15pt;"="" ui",sans-serif;="" yahei="" microsoft="">主函数算法框图<span lang="EN-US" style="margin: 0px;"></span></span></span></font></p>
+## 主函数算法框图
 
 <p style="margin: 8px 0px 13.33px; text-indent: 36pt;"><font size="2"><font color="#595959"><span style="margin: 0px; font-family: 华文新魏;">注：需要在语义分析开始前，检测语法树的最后一个函数是否为</span><span lang="EN-US" style="margin: 0px;"><font face="Constantia">main</font></span><span style="margin: 0px; font-family: 华文新魏;">函数。</span></font></font><span lang="EN-US" style="margin: 0px; line-height: 110%; font-family: " yahei="" microsoft="" ui",sans-serif;"=""></span></p>
 
